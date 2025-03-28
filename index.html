@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SaborMoz - Produtos Alimentícios</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fff8e1;
+            transition: background 0.5s, color 0.5s;
+        }
+        body.dark-mode {
+            background-color: #333;
+            color: white;
+        }
+        header {
+            background-color: #d32f2f;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        nav ul li a:hover {
+            color: #ffc107;
+        }
+        section {
+            padding: 80px 20px 20px;
+            text-align: center;
+            transition: opacity 0.5s;
+        }
+        .galeria-produtos {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+        .produto {
+    background: #ffc107;
+    padding: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s, background 0.3s;
+    opacity: 0;
+    transform: translateY(20px);
+    width: 200px; /* Ajuste a largura conforme necessário */
+    text-align: center;
+    font-weight: bold;
+    height: 250px; /* Ajuste a altura conforme necessário */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    flex-direction: column; /* Para alinhar a imagem e o texto verticalmente */
+}
+
+.produto:hover {
+    background: #ff9800;
+    transform: scale(1.1);
+}
+
+.produto.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.produto img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 10px; /* Espaçamento entre a imagem e o texto */
+}
+
+.produto p {
+    margin-top: 10px;
+    font-size: 14px;
+    font-weight: normal;
+}
+        }
+        button {
+            margin-top: 10px;
+            padding: 10px;
+            cursor: pointer;
+        }
+        .dark-mode-toggle {
+            background: #444;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #d32f2f;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 24px;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+        .back-to-top.show {
+            display: flex;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>SaborMoz</h1>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#produtos">Produtos</a></li>
+                <li><a href="#localizacao">Localização</a></li>
+                <li><a href="#contato">Contato</a></li>
+                
+            </ul>
+        </nav>
+        <button class="dark-mode-toggle">Modo Escuro</button>
+    </header>
+    
+    <section id="inicio"><br/><br/><br/><br/>
+        <h2>Bem-vindo à SaborMoz</h2>
+        <p>Na SaborMoz , valorizamos os sabores autênticos de Moçambique.</p>
+        <p>Trabalhamos com ingredientes naturais e selecionados para garantir a melhor qualidade em cada produto.</p>
+        <p>Explore nossa seleção de alimentos frescos e tradicionais!</p>
+    </section>
+    <section id="sobre"> <br/><br/><br/>
+        <h2>Sobre Nós</h2>
+        <p>A SaborMoz é uma empresa moçambicana dedicada à produção e comercialização de alimentos de alta qualidade.</p>
+        <p>Nosso objetivo é levar até você produtos selecionados, respeitando as tradições gastronômicas do nosso país e incentivando a sustentabilidade na agricultura local.</p>
+        <p>Trabalhamos lado a lado com produtores locais para oferecer produtos frescos e saudáveis, promovendo o crescimento da economia regional.</p>
+    </section>
+    
+    <section id="produtos">
+        <h2>Nossos Produtos</h2>
+        <p>Oferecemos uma variedade de produtos alimentícios selecionados para garantir sabor e qualidade. Nossos principais itens incluem:</p>
+
+        <p>Cebolas e Batatas – ingredientes essenciais para diversas receitas.</p>
+
+        <p>Pimentos e Temperos – ervas e especiarias que dão um toque especial às suas refeições.</p>
+
+        <p>Tomates Frescos – cultivados com cuidado para um sabor autêntico.</p>
+
+        <p>Preparados para Receitas – ingredientes combinados para facilitar o seu dia a dia na cozinha.</p>
+        <div class="galeria-produtos">
+            <div class="produto">
+                <img src="img/produto1.jpg" alt="produto1" class="produto-imagem">
+                <p>Cebolas,Batatas</p>
+            </div>
+            <div class="produto">
+                <img src="img/produto2.jpg" alt="produto2" class="produto-imagem">
+                <p>Pimetos e alguns tempeiros</p>
+            </div>
+            <div class="produto">
+                <img src="img/produto3.jpg" alt="Produto3" class="produto-imagem">
+                <p>Tomates</p>
+            </div>
+            <div class="produto">
+                <img src="img/produto4.jpg" alt="produto4" class="produto-imagem">
+                <p>Preparo da receita</p>
+            </div>
+            <div class="produto">
+                <img src="img/produto5.jpg" alt="produto5" class="produto-imagem">
+                <p>Receita final</p>
+            </div>
+        </div>
+    </section>
+    
+    <section id="localizacao">
+        <h2>Onde Estamos Localizados Geograficamente</h2>
+        <p>Estamos localizados em Maputo, em Moçambique.</p>
+        <p>Nosso espaço é de fácil acesso, permitindo que nossos clientes encontrem produtos frescos diretamente na fonte.</p>
+        <p> Venha nos visitar e conhecer de perto a qualidade da <b>SaborMoz!</p>
+        <iframe src="https://www.google.com/maps/embed?..." width="600" height="450" style="border:0;" allowfullscreen></iframe>
+    </section>
+    <section id="contato">
+        <h2>Preencha o Formulario abaixo:</h2>
+    <form>
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" required>
+            <label for="mensagem">Mensagem:</label>
+            <textarea id="mensagem" required></textarea>
+            <button type="submit">Enviar</button>
+            <p id="erro-form" style="color: red; display: none;">Preencha todos os campos!</p>
+        </form>
+    </section>
+    
+    <footer>
+        <p>&copy; 2025 SaborMoz - Todos os direitos reservados.</p>
+    </footer>
+    
+    <button class="back-to-top" aria-label="Voltar ao topo">&#8593;</button>
+
+    <script>
+        // Alternar modo escuro
+        document.querySelector(".dark-mode-toggle").addEventListener("click", function() {
+            document.body.classList.toggle("dark-mode");
+        });
+
+        // Validação do formulário
+        document.querySelector("form").addEventListener("submit", function(event) {
+            event.preventDefault();
+            let nome = document.getElementById("nome").value;
+            let email = document.getElementById("email").value;
+            let mensagem = document.getElementById("mensagem").value;
+            let erroForm = document.getElementById("erro-form");
+
+            if (nome === "" || email === "" || mensagem === "") {
+                erroForm.style.display = "block";
+            } else {
+                erroForm.style.display = "none";
+                alert("Mensagem enviada com sucesso!");
+            }
+        });
+
+        // Efeito de rolagem suave
+        document.querySelectorAll("nav ul li a").forEach(link => {
+            link.addEventListener("click", function(event) {
+                event.preventDefault();
+                let destino = document.querySelector(this.getAttribute("href"));
+                destino.scrollIntoView({ behavior: "smooth" });
+            });
+        });
+
+        // Animação de entrada dos produtos
+        window.addEventListener("scroll", function() {
+            document.querySelectorAll(".produto").forEach(produto => {
+                let posicao = produto.getBoundingClientRect().top;
+                let alturaTela = window.innerHeight - 50;
+                if (posicao < alturaTela) {
+                    produto.classList.add("show");
+                }
+            });
+
+            // Exibir o botão de voltar ao topo
+            let backToTopButton = document.querySelector(".back-to-top");
+            if (window.scrollY > 300) {
+                backToTopButton.classList.add("show");
+            } else {
+                backToTopButton.classList.remove("show");
+            }
+        });
+
+        // Rolagem suave para o topo
+        document.querySelector(".back-to-top").addEventListener("click", function() {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        });
+    </script>
+</body>
+</html>
+
+
+
+
